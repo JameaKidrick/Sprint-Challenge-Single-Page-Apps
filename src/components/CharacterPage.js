@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import CharacterCard from './CharacterCard'
 
 const Character = (props) => {
     const [char, setChar] = useState([])
 
     useEffect(() => {
-    const id = props.match.id;
+    const id = props.match.params.id;
     axios
     .get(`https://rickandmortyapi.com/api/character/${id}`)
     .then(response => {
@@ -16,16 +15,19 @@ const Character = (props) => {
     .catch(error => {
         console.log('Error', error)
     })
-    }, [props.match.id]);
+    }, [props.match.params.id]);
 
+    const { name, species, origin, loc, epi } = char;
     return(
-        <div>
-            {/* MAP THROUGH */}
-            <CharacterCard 
-            name={props.name}
-            {props.species}
-            />
-        </div>
+        <>
+        <h2>{name}</h2>
+        <p>{species}</p>
+        {/* <p>{origin.name}</p> */}
+        {/* // <p></p> */}
+        {/* {for(let i=0; i<episode.length; i++){
+            return episode[i].name
+        }} */}
+        </>
     )
 }
 

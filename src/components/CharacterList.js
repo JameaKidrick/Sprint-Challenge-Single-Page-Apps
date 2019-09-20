@@ -26,7 +26,7 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <h2>Fun Facts</h2>
+      <h2>Character List</h2>
       {/* <SearchForm name={char}/> */}
       {char.map((item, index) => {
         return(
