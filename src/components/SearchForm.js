@@ -9,9 +9,12 @@ export default function SearchForm() {
     setSearchTerm(e.target.value);
   };
 
-  useEffect(() => {
-    const results = CharacterList
-  })
+  // useEffect(() => {
+  //   const results = char.filter(fav =>
+  //     fav.toLowerCase().includes(searchTerm.toLowerCase())
+  //     );
+  //     setSearchResults(results);
+  // }, [])
 
   return (
     <section className="search-form">

@@ -3,7 +3,6 @@ import Header from "./components/Header.js";
 import CharacterList from './components/CharacterList';
 import { Route } from 'react-router-dom'
 import WelcomePage from "./components/WelcomePage.js";
-import SearchForm from "./components/SearchForm.js";
 
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
     <main>
       <Header />
       <WelcomePage />
-      <SearchForm />
 
       <CharacterList />
 
