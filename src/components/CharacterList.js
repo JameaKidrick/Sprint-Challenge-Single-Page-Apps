@@ -3,11 +3,33 @@ import axios from "axios";
 import CharacterCard from './CharacterCard'
 import SearchForm from './SearchForm'
 import { Link } from 'react-router-dom'
+// import { Card, Col } from 'reactstrap'
+import styled from 'styled-components'
+
+const Card = styled.div`
+  width: 250px
+  margin: 10px
+  color: white
+`
+const Contain = styled.div`
+  display: flex
+  text-align: center
+  flex-direction: column
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+`
+
+
+
+
+
+
+
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [char, setChar] = useState([])
-  // const [id, setId] = useState(1)
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -25,31 +47,23 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list">
+    <Contain className="character-list">
       <h2>Character List</h2>
-      {/* <SearchForm name={char}/> */}
+      {/* <SearchForm /> */}
+
       {char.map((item, index) => {
         return(
           <Link to={`/character/${item.id}`}>
-            <CharacterCard
+            <Card>
+              <CharacterCard
               key={index}
               name={item.name}
               species={item.species}
-              // origin={item.origin.name}
-              // location={item.location.name}
-              // episode={item.episode.length}
-            />
+              />
+            </Card>
           </Link>
         )
       })}
-    </section>
+    </Contain>
   );
 }
-
-{/* <CharacterCard */}
-{/* // species={item.species}
-              // origin={item.origin.name}
-              // location={item.location.name}
-              // episode={item.episode.length}
-            // /> */}
-            {/* <button onClick={() => setId(Math.floor(Math.random()*493))}>Random Character</button> */}

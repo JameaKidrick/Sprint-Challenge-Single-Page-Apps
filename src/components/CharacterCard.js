@@ -1,13 +1,12 @@
 import React from "react";
+import { Container, Card, CardTitle } from 'reactstrap';
 
 export default function CharacterCard(props) {
   return(
-    <div className='cardContainer' key={props.id}>
-      <h2>{props.name}</h2>
-      <p>Species: {props.species}</p>
-      {/* <p>Origin: {props.origin}</p>
-      <p>Current Location: {props.location}</p>
-      <p>Appeared in {props.episode} episode(s)</p> */}
-    </div>
+    <Container>
+      <Card color='success' className='cardContainer' key={props.id}>
+        <CardTitle>{props.name}</CardTitle>
+      </Card>
+    </Container>
   )
 }
