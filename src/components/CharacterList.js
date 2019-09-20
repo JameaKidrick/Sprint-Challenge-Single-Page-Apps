@@ -25,7 +25,7 @@ export default function CharacterList() {
   return (
     <section className="character-list">
       <h2>Fun Facts</h2>
-      {char.map((item, index) => {
+      {char.map((item) => {
         return(
           <>
             <CharacterCard
@@ -36,6 +36,7 @@ export default function CharacterList() {
               location={item.location.name}
               episode={item.episode.length}
             />
+            <button onClick={() => setId(Math.floor(Math.random()*493))}>Random Character</button>
           </>
         )
       })}
