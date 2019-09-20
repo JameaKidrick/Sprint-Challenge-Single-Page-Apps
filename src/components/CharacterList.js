@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from './CharacterCard'
 import SearchForm from './SearchForm'
+import { Link } from 'react-router-dom'
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -16,7 +17,7 @@ export default function CharacterList() {
     .then(response => {
       const getChar = response.data.results;
       setChar(getChar);
-      console.log(getChar)
+      // console.log(getChar)
     })
     .catch(error => {
       console.log('Error', error)
@@ -29,14 +30,16 @@ export default function CharacterList() {
       {/* <SearchForm name={char}/> */}
       {char.map((item, index) => {
         return(
-          <CharacterCard
-            key={index}
-            name={item.name}
-            species={item.species}
-            // origin={item.origin.name}
-            // location={item.location.name}
-            // episode={item.episode.length}
-          />
+          <Link to={`/character/${item.id}`}>
+            <CharacterCard
+              key={index}
+              name={item.name}
+              species={item.species}
+              // origin={item.origin.name}
+              // location={item.location.name}
+              // episode={item.episode.length}
+            />
+          </Link>
         )
       })}
     </section>

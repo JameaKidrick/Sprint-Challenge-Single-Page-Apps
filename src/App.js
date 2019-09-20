@@ -3,6 +3,7 @@ import Header from "./components/Header.js";
 import CharacterList from './components/CharacterList';
 import { Route } from 'react-router-dom'
 import WelcomePage from "./components/WelcomePage.js";
+import Character from './components/CharacterPage'
 
 
 export default function App() {
@@ -10,11 +11,14 @@ export default function App() {
     <main>
       <Header />
       <WelcomePage />
+      <Route exact path='/' component={CharacterList} />
 
-      <CharacterList />
+      {/* <CharacterList /> */}
 
-      {/* <Route exact path='/' component={WelcomePage} /> */}
-      {/* <Route path='/character' */}
+      <Route path='/character/:id' 
+      // component={Character}
+      render={props => <Character {...props} />}
+      />
     </main>
   );
 }
