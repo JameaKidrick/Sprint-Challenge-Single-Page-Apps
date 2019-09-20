@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import CharacterCard from './CharacterCard'
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -23,11 +24,18 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      <h2>Fun Facts</h2>
       {char.map((item, index) => {
         return(
           <>
-            
+            <CharacterCard
+              key={item.id}
+              name={item.name}
+              species={item.species}
+              origin={item.origin.name}
+              location={item.location.name}
+              episode={item.episode.length}
+            />
           </>
         )
       })}
