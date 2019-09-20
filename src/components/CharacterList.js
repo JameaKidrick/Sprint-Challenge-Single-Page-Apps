@@ -20,13 +20,6 @@ const Contain = styled.div`
   align-items: center
 `
 
-
-
-
-
-
-
-
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
   const [char, setChar] = useState([])
@@ -58,7 +51,6 @@ export default function CharacterList() {
               <CharacterCard
               key={index}
               name={item.name}
-              species={item.species}
               />
             </Card>
           </Link>

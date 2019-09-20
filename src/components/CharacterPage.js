@@ -17,16 +17,11 @@ const Character = (props) => {
     })
     }, [props.match.params.id]);
 
-    const { name, species, origin, loc, epi } = char;
+    const { name, species } = char;
     return(
         <>
         <h2>{name}</h2>
         <p>{species}</p>
-        {/* <p>{origin.name}</p> */}
-        {/* // <p></p> */}
-        {/* {for(let i=0; i<episode.length; i++){
-            return episode[i].name
-        }} */}
         </>
     )
 }
