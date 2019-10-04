@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: When the client is rerouted, the page doesn't reload thereby allowing smoother transition.
 
 ## Project Set Up
 
